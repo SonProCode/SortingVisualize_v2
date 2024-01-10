@@ -2,11 +2,7 @@
 
 Chi tiết:
   - Chương trình được viết bằng thư viện GUI tiêu chuẩn Tkinter cho Python.
-<<<<<<< HEAD
   - Chương trình chính được viết ở main.py và file exe để trong /dist/main.exe
-=======
-  - Chương trình chính được viết ở main.py và file exe để trong /dist/main.exe.
->>>>>>> e9f10a02a78a3abafe62bdcf0972e21147df8d9b
   - Phần mềm mô tả 5 thuật toán sort: Bubble sort, Selection sort, Insertion sort, Merge sort, Quick sort
   - Người dùng có thể nhập vào dãy sô tùy thích hoặc chọn sinh ngẫu nhiên 1 dãy với số lượng phần tử, giá trị nhỏ nhất, lớn nhất tùy ý.
   - Sau khi điền các giá trị mong muốn, người dùng ấn nút Generate để vẽ ra dãy số theo đầu vào.
