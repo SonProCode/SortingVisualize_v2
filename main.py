@@ -17,7 +17,6 @@ root.title('Sorting Algorithm Visualisation')
 # kích cỡ cửa sổ
 root.maxsize(900, 600)
 root.config(bg='black')
-
 # variables
 selected_alg = StringVar()
 selected_seq = StringVar()
@@ -376,9 +375,14 @@ def bubble_sort(data, drawData, timeTick, ascending):
             if (data[j] > data[j + 1] and ascending) or (data[j] < data[j + 1] and not ascending):
                 data[j], data[j + 1] = data[j + 1], data[j]
                 # vẽ dãy với sự thay đổi ở phần tử ở vị trí j và j + 1
+                if is_stop:
+                    return
                 drawData(data, ['blue' if x == j or x == j + 1 else 'red' for x in range(len(data))], kind=1)
                 time.sleep(timeTick)
+
     # vẽ dãy sau khi sort xong
+    if is_stop:
+        return
     drawData(data, ['yellow' for x in range(len(data))], kind=1)
 
 
@@ -498,7 +502,7 @@ def insertionSort(data, drawData, timeTick, ascending):
             time.sleep(1)
         if is_stop:
             return
-        # vòng lặp hoán đổi 2 giá trị ở 2 vị trí liên tiếp
+        # vòng lặp chèn
         while j > 0 and ((data[j - 1] > data[j] and ascending) or (data[j - 1] < data[j] and not ascending)):
             while is_paused:
                 time.sleep(1)
@@ -621,7 +625,7 @@ algMenu.grid(row=0, column=1, padx=5, pady=10)
 algMenu.current(0)
 
 # thanh chọn thứ tự sắp xếp
-Label(UI_frame, text="Sequence: ", bg='grey').grid(row=0, column=2, padx=5, pady=5, sticky=W)
+Label(UI_frame, text="Order: ", bg='grey').grid(row=0, column=2, padx=5, pady=5, sticky=W)
 seq = ttk.Combobox(UI_frame, textvariable=selected_seq, values=['ascending', 'descending'])
 seq.grid(row=0, column=3, padx=5, pady=10)
 seq.current(0)
